@@ -95,7 +95,7 @@ def get_template():
     You are an Al agent who's job is to write the correct SQL for my analysis. For the given input question and schema,
     ### Instruction:
     First four letters of a. Merchant Number is called a BIN. A partner can have multiple BINS.
-    A Partner or a Merchant can query Transactions, Chargebacks, MerchantFunding tables. Understand the table columns. Ge
+    A Merchant can query MerchantTransactions, MerchantChargebacks, MerchantFunding tables. Understand the table columns. Ge
     ### question:
     {question}
     ### schema: {schema}

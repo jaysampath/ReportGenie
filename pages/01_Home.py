@@ -28,14 +28,14 @@ st.set_page_config(page_title="ReportGenie", page_icon="")
 st.header('Chat with AI for your reporting requirements')
 st.write('Enable the chatbot to interpret your query and generate a report')
 st.sidebar.header('Database Schema Details')
-os.environ ["DATABRICKS_HOST"]='https://dbc-d587060f-4371.cloud.databricks.com'
+os.environ ["DATABRICKS_HOST"]='https://databricks-account.cloud.databricks.com'
 os.environ ["DATABRICKS_TOKEN"]=''
 DATABRICKS_TOKEN = ''
 selected_query = None
-supported_tables = ['Transactions', 'MerchantDemographics', 'Chargebacks', 'MerchantFunding']
+supported_tables = ['MerchantTransactions']
 # result_tables = f"({', '.join(f'\'{entry}\' for entry in supported_tables)})"
 result_tables = "('" + "', '".join(supported_tables) + "')"
-target_schema = 'BI'
+target_schema = 'MERCH'
 print("result tables")
 print(result_tables)
 conn_info = {

@@ -19,8 +19,8 @@ class QueryService:
     self.llm = model
 def generate_query(self, st_cb, question) -> Response:
   #tables = fetch_tables(schema)
-  schema = 'BI'
-  tables=['Transactions', 'MerchantFunding']
+  schema = 'MERCH'
+  tables=['MerchantTransactions']
   schema_for_template = get_schema (tables)
   print('---schema_for_template', schema_for_template)
   prompt = PromptTemplate.from_template(get_template())

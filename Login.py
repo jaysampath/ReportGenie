@@ -1,8 +1,8 @@
 import streamlit as st
-st.session_state['current_query'] = "Select * from BI. Transactions t where t.StatementDate=2020-86-84'"
+st.session_state['current_query'] = "Select * from MERCH.MerchantTransactions t where t.PaymentDate=2020-86-84'"
 st.session_state['configured schedules'] = []
 st.session_state['query_history']=[]
-st.session_state['default_merchant_number'] = '3286000000292144'
+st.session_state['default_merchant_number'] = '1234'
 st.session_state['current_page']='Home'
 st.set_page_config(page_title="ReportGenie", page_icon="B")
 st.header('ReportGenie')
@@ -34,7 +34,7 @@ else:
     if st.session_state.input_merchant_number: #Check if merchantnumber is provided
       login()
       st.session_state['current_page']='Gen AI'
-      st.session_state['current_query'] = "SELECT FROM BI. Transactions WHERE CardSchemeCode = 'MC' AND Merchant Number 3286008088292144
+      st.session_state['current_query'] = "SELECT FROM Merch.MerchantTransactions WHERE CardSchemeCode = 'VISA' AND MerchantNumber='1234'"
       st.switch_page("pages/01_Home.py")
     else:
       st.error("Please enter a merchantnumber.")

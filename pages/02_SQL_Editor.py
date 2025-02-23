@@ -4,12 +4,12 @@ import streamlit_toggle as tog
 import vertica_python
 import pandas as pd
 import utils
-st.set_page_config(page_title="Report6enie", page_icon="")
+st.set_page_config(page_title="ReportGenie", page_icon="")
 st.header('SQL Editor')
-supported_tables = ['Transactions', 'Merchant Demographics', 'Chargebacks', 'Merchant Funding']
+supported_tables = ['MerchantTransactions']
 # result_tables = f"({', '.join(f'\'{entry}\'' for entry in supported_tables)})"
 result_tables = "('" + "', '".join(supported_tables) + "')"
-target_schema = 'BI'
+target_schema = 'MERCH'
 print("result-tables")
 print(result_tables)
 #Vertica connection configuration
@@ -67,7 +67,7 @@ def query():
       conn = create_connection()
   try:
     cursor = conn.cursor()
-    cursor.execute(f"SET SEARCH_PATH TO {target_schema}") # To query only BI schema
+    cursor.execute(f"SET SEARCH_PATH TO {target_schema}") # To query only MERCH schema
     query= cursor.execute(query)
     cols = [column[0] for column in query.description]
     results_df= pd.DataFrame.from_records (
